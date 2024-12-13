@@ -1,4 +1,5 @@
 --!strict
+--!optimize 2
 
 -- BloxstrapRPC SDK Module v1.1.0
 -- Written by pizzaboxer (@xtremeguy2256) and Epix (@ElusiveEpix)
@@ -28,7 +29,7 @@ export type RichPresenceImage = {
 --[=[
 	Removes any non-number characters from AssetId, useful if the developer is passing in a ID that is taken directly from Instances like Decals or ImageLabels that contain `rbxassetid` or a URL like `http://www.roblox.com/asset/?id=`.
 ]=]
-function SanitiseAssetId(assetId: string): number?
+local function SanitiseAssetId(assetId: string): number?
 	if type(assetId) ~= "string" then
 		return assetId
 	end
